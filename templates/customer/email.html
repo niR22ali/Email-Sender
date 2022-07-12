@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email-sender</title>
+	<style type="text/css">
+		.header{
+			height: 100px;
+			/*width: 100%;*/
+			background-color: #F9C6C6;
+			border: 1px solid #F9C6C6;
+			font-size: 20px;
+		}
+		h1{
+			/*color: white;*/
+		}
+		.footer{
+			height: 70px;
+			background-color: #F9C6C6;
+			border: 1px solid #F9C6C6;
+			font-size: 15px;
+			padding-left: 5rem;
+		}
+		.content{
+			height: 530px;
+			background-color: #E1E9E9;
+			border: 1px solid #F9C6C6;
+		}
+		input[type="text"]
+		{
+			height: 30px;
+			width: 300px;
+			border-radius: 5px;
+			transition: box-shadow .3s;
+		}
+		input[type="text"]:hover{
+			box-shadow: 0 0 10px #F90850;
+                        0 0 20px #F90850;
+                        0 0 40px #F90850;
+                        0 0 80px #F90850;
+                        0 0 120px #F90850;
+                        0 0 160px #F90850;
+		}
+		textarea{
+			width: 300px;
+			height: 100px;
+			border-radius: 5px;
+			transition: box-shadow .3s;
+		}
+		textarea:hover{
+			box-shadow: 0 0 10px #F90850;
+                        0 0 20px #F90850;
+                        0 0 40px #F90850;
+                        0 0 80px #F90850;
+                        0 0 120px #F90850;
+                        0 0 160px #F90850;
+		}
+		input[type=submit]
+		{
+			width: 100px;
+			height: 40px;
+			border-radius: 5px;
+			background-color: #F9C6C6;
+			font-size: 19px;
+			margin-left: 80px;
+			margin-top: 30px;
+			font-weight: bold;
+			border-color: #F9C6C6
+		}
+		input[type=submit]:hover{
+			box-shadow: 0 0 10px #F90850;
+                        0 0 20px #F90850;
+                        0 0 40px #F90850;
+                        0 0 80px #F90850;
+                        0 0 120px #F90850;
+                        0 0 160px #F90850;
+		}
+	</style>
+</head>
+<body>
+	<div class='header'>
+		<h1 align="center">Email Sender Web App</h1>
+	</div>
+	<div class=content>
+		<br/><br/><br><br><br><br>
+		{% if messages %}
+        <ul class="messages">
+	    	{% for message in messages %}
+	        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+	        {% endfor %}
+        </ul>
+        {% endif %}
+		<form method="post" action="/customer/email_info/">
+			{% csrf_token %}
+		<table align="center" cellspacing="0" cellpadding="10">
+			<tr>
+				<td style="font-weight: bold;">To</td>
+				<td><input type="text" name="to"></td>
+			</tr>
+			<tr>
+				<td style="font-weight: bold">Subject</td>
+				<td><input type="text" name="subject"></td>
+			</tr>
+			<tr>
+				<td style="font-weight: bold">Message</td>
+				<td>
+					<textarea name="message"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="Send"></td>
+			</tr>
+		</table>
+		</form>
+	</div>
+	<div class=footer>
+		<h1 align="center">@copyright</h1>
+	</div>
+</body>
+</html>
