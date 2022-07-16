@@ -11,4 +11,4 @@ The mail will be sent to the particular mail id written into this application.
 
 ![Email-sender - Google Chrome 12-07-2022 14_19](https://user-images.githubusercontent.com/109034712/178465871-cc352b34-90ca-45c7-915e-3bb6de457c33.png)
 
-![Email-sender - Google Chrome 12-07-2022 14_20](https://user-images.githubusercontent.com/109034712/178465886-7f4256b5-14b3-43c0-a3cd-62c7537947c2.png)
+
